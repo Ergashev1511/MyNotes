@@ -1,0 +1,26 @@
+﻿<Window x:Class="MyNotes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyNotes"
+        xmlns:pin="clr-namespace:MyNotes.UI"
+        mc:Ignorable="d"
+        Loaded="MainWindow_OnLoaded"
+        Title="MainWindow" Height="450" Width="800">
+    
+    <Grid>
+
+        <DockPanel x:Name="SignUp_doc" Visibility="Visible">
+            <pin:SignUpPage x:Name="signUp" Width="Auto" Height="Auto"></pin:SignUpPage>
+        </DockPanel>
+      
+        <DockPanel x:Name="Pin_doc" Visibility="Collapsed">
+             <pin:PinKodPage x:Name="Pinkod" Width="Auto" Height="Auto"></pin:PinKodPage>
+        </DockPanel>
+        
+        <DockPanel x:Name="Main_doc" Visibility="Collapsed">
+            <pin:MainPage x:Name="main_page" Width="Auto" Height="Auto"></pin:MainPage>
+        </DockPanel>
+    </Grid>
+</Window>
