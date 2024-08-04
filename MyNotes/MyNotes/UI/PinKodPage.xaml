@@ -1,0 +1,52 @@
+<UserControl x:Class="MyNotes.UI.PinKodPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:MyNotes.UI"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0" ColumnSpan="4" RowSpan="6">
+            <Image Source="C:\Users\tursu\RiderProjects\MyNotes\MyNotes\UI\Images\photo_2024-07-25_17-08-34.jpg" Stretch="Fill"></Image>
+        </Grid>
+        <Grid  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"  Grid.RowSpan="4">
+            <StackPanel>
+                <TextBlock Text="Enter your local passcode" Foreground="White" HorizontalAlignment="Center" FontSize="20"></TextBlock>
+                <StackPanel Margin="0 20 0 0" HorizontalAlignment="Center">
+                    <TextBlock HorizontalAlignment="Center" Text="Your passcode" Foreground="White"></TextBlock>
+                    <PasswordBox x:Name="PasswordBox" PasswordChanged="PasswordBox_OnPasswordChanged" FontSize="20" HorizontalContentAlignment="Center"  Foreground="White" Width="150" Height="30" Background="Transparent " BorderThickness="0"></PasswordBox>
+                    
+                    <WrapPanel Width="240"  Margin="0 10 0 0">
+                        <Button Click="ButtonBase_OnClick" Content="1" FontSize="25" Background="Transparent" Foreground="White" BorderThickness="0" Width="80" Height="45"></Button>
+                        <Button Click="ButtonBase_OnClick" Content="2" FontSize="25" Background="Transparent" Foreground="White" BorderThickness="0" Width="80" Height="45"></Button>
+                        <Button Click="ButtonBase_OnClick" Content="3" FontSize="25" Background="Transparent" Foreground="White" BorderThickness="0" Width="80" Height="45"></Button>
+                        <Button Click="ButtonBase_OnClick" Content="4" FontSize="25" Background="Transparent" Foreground="White" BorderThickness="0" Width="80" Height="45"></Button>
+                        <Button Click="ButtonBase_OnClick" Content="5" FontSize="25" Background="Transparent" Foreground="White" BorderThickness="0" Width="80" Height="45"></Button>
+                        <Button Click="ButtonBase_OnClick" Content="6" FontSize="25" Background="Transparent" Foreground="White" BorderThickness="0" Width="80" Height="45"></Button>
+                        <Button Click="ButtonBase_OnClick" Content="7" FontSize="25" Background="Transparent" Foreground="White" BorderThickness="0" Width="80" Height="45"></Button>
+                        <Button Click="ButtonBase_OnClick" Content="8" FontSize="25" Background="Transparent" Foreground="White" BorderThickness="0" Width="80" Height="45"></Button>
+                        <Button Click="ButtonBase_OnClick" Content="9" FontSize="25" Background="Transparent" Foreground="White" BorderThickness="0" Width="80" Height="45"></Button>
+                        <Button Content="*" FontSize="25" Background="Transparent" Foreground="White" BorderThickness="0" Width="80" Height="45"></Button>
+                        <Button Click="ButtonBase_OnClick" Content="0" FontSize="25" Background="Transparent" Foreground="White" BorderThickness="0" Width="80" Height="45"></Button>
+                        <Button x:Name="back_btn" Click="Back_btn_OnClick" Content="↩" FontSize="25" Background="Transparent" Foreground="White" BorderThickness="0" Width="80" Height="45"></Button>
+                    </WrapPanel>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

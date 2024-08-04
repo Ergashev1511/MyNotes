@@ -15,6 +15,9 @@
             <pin:SignUpPage x:Name="signUp" Width="Auto" Height="Auto"></pin:SignUpPage>
         </DockPanel>
       
+        
+        
+        <!--mslef -->
         <DockPanel x:Name="Pin_doc" Visibility="Collapsed">
              <pin:PinKodPage x:Name="Pinkod" Width="Auto" Height="Auto"></pin:PinKodPage>
         </DockPanel>

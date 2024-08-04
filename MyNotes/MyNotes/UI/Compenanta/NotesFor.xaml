@@ -1,0 +1,25 @@
+<UserControl x:Class="MyNotes.UI.Compenanta.NotesFor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:MyNotes.UI.Compenanta"
+             mc:Ignorable="d"
+             d:DesignHeight="60" d:DesignWidth="570">
+    <UserControl.Resources>
+        <ResourceDictionary Source="/Controls.xaml"/>
+    </UserControl.Resources>
+ 
+    <DockPanel>
+        <Button Width="450" Height="60"  x:Name="note_btn" Click="Note_btn_OnClick" Style="{DynamicResource RoundButton}" Background="Green">
+            <StackPanel>
+                <TextBlock x:Name="title_txt" Foreground="White" FontWeight="Heavy" Text="My Notes"></TextBlock>
+                <DockPanel Margin="0 10 0 0">
+                    <TextBlock x:Name="day_txt" Foreground="White" FontSize="10" Text="15/12/2024"></TextBlock>
+                </DockPanel>
+            </StackPanel>
+        </Button>
+        <Button x:Name="update_btn" Click="Update_btn_OnClick" Content="Update" Foreground="White" FontSize="12" Background="Green" Style="{DynamicResource RoundButton}" Margin="5 0 0 0" Width="50" Height="60"></Button>
+        <Button x:Name="delete_btn" Click="Delete_btn_OnClick" Content="Delete" Foreground="White" FontSize="12" Background="Green" Style="{DynamicResource RoundButton}" Margin="5 0 0 0"  Width="50" Height="60"></Button>
+    </DockPanel>
+</UserControl>

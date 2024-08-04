@@ -1,0 +1,114 @@
+<UserControl x:Class="MyNotes.UI.MainPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:MyNotes.UI"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary Source="/Controls.xaml"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="menyuPage" Column="0" Visibility="Collapsed">
+            <Image Source="C:\Users\tursu\RiderProjects\MyNotes\MyNotes\UI\Images\photo_2024-07-26_09-08-35.jpg" Stretch="Fill"></Image>
+            <StackPanel>
+                <DockPanel Margin="0 20 0 0">
+                    <Button Width="25" Height="25" HorizontalAlignment="Left" Background="Transparent" Foreground="White" BorderThickness="0">
+                        <md:PackIcon Kind="Menu"></md:PackIcon>
+                    </Button>
+                    <TextBlock HorizontalAlignment="Center" Text="Menyu" Foreground="White" FontSize="30"></TextBlock>
+                </DockPanel>
+                <Button x:Name="note_btn" Click="Note_btn_OnClick" Width="120" Height="30" Margin="0 30 0 0" Style="{DynamicResource RoundButton}" BorderThickness="1" Background="Transparent" Content="Notes" Foreground="White" FontSize="15" FontWeight="Heavy"></Button>
+                <Button Width="120" Height="30" Margin="0 30 0 0" Style="{DynamicResource RoundButton}" BorderThickness="1" Background="Transparent" Content="New Task" Foreground="White" FontSize="15" FontWeight="Heavy"></Button>
+            </StackPanel> 
+        </Grid>
+        
+        <Grid x:Name="settins_page" Column="0" Visibility="Visible">
+            <StackPanel>
+                <DockPanel>
+                    <Button>
+                        <md:PackIcon Kind="LocationExit"></md:PackIcon>
+                    </Button>
+                    <TextBlock Text="Settings"></TextBlock>
+                </DockPanel>
+            </StackPanel>
+        </Grid>
+        
+        
+        <DockPanel x:Name="notesList_Dcc" Grid.Column="1" Visibility="Visible">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid Grid.Row="0" Background="Green">
+                    <TextBlock Text="My Notes" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center" FontSize="20"></TextBlock>
+                </Grid>
+                
+                
+                <Grid Grid.Row="1">
+                    <ScrollViewer>
+                        <StackPanel HorizontalAlignment="Center" x:Name="main_wrap">
+                                           
+                        </StackPanel>
+                    </ScrollViewer>
+                    
+                </Grid>
+                
+                
+                
+                <Grid Grid.Row="2">
+                    <Button x:Name="addNote_btn" Click="AddNote_btn_OnClick" Style="{DynamicResource RoundButton}" Margin="0 0 40 0" Width="40"  Height="40" Background="Green" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <md:PackIcon Kind="Plus" Width="30" Height="30"  Foreground="White"></md:PackIcon>
+                    </Button>
+                </Grid>
+            </Grid>
+        </DockPanel>
+        <DockPanel x:Name="AddNotes_Doc" Grid.Column="1" Visibility="Collapsed">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Background="Green">
+                    <DockPanel>
+                        <Button x:Name="back_btn" Click="Back_btn_OnClick" Width="30" Height="30" BorderThickness="0" Background="Transparent" >
+                            <md:PackIcon Kind="ChevronLeft" Foreground="White" Width="30" Height="30"></md:PackIcon>
+                        </Button>
+                        <TextBlock Text="New Notes" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="25"></TextBlock>
+                    </DockPanel>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Title" Foreground="Green" FontSize="20" Margin="20 0 0 0"></TextBlock>
+                            <Border HorizontalAlignment="Left" Margin="20 0 0 0" Width="400" Height="30" BorderBrush="Black" BorderThickness="0.5" CornerRadius="8">
+                                <TextBox x:Name="title_txt" FontSize="15" BorderThickness="0" Padding="10 2 0 0" Width="390" HorizontalAlignment="Left"></TextBox>
+                            </Border>
+                        </StackPanel>
+                    <StackPanel HorizontalAlignment="Left" Margin="0 20 0 0">
+                        <TextBlock Text="Notes" Foreground="Green" Margin="20 0 0 0" FontSize="20"></TextBlock>
+                      <Border Width="400" Height="180" BorderBrush="Black" BorderThickness="0.5" CornerRadius="10" Margin="20 0 0 0">
+                          <TextBox x:Name="note_txt" FontSize="15" TextWrapping="Wrap" BorderThickness="0" Width="390" Height="190"></TextBox>
+                      </Border>
+                    </StackPanel>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Button x:Name="save_btn" Click="Save_btn_OnClick" Style="{DynamicResource RoundButton}" Margin="0 0 40 0" Background="Green" VerticalAlignment="Center" HorizontalAlignment="Right" Width="50" Height="50">
+                        <md:PackIcon Kind="CheckBold" Foreground="White" Width="40" Height="40"></md:PackIcon>
+                    </Button>
+                </Grid>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>
